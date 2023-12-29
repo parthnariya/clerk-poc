@@ -1,18 +1,12 @@
-import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
-import "./App.css";
+import { RouterProvider } from "react-router-dom";
+import router from "./router/routes";
 
-function App() {
-  return (
-    <div>
-      <SignedOut>
-        <SignInButton />
-        <p>This content is public. Only signed out users can see this.</p>
-      </SignedOut>
-      <SignedIn>
-        <p>This content is private. Only signed in users can see this.</p>
-      </SignedIn>
-    </div>
-  );
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key");
 }
 
-export default App;
+export default function App() {
+  return <RouterProvider router={router} />;
+}
