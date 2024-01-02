@@ -1,16 +1,17 @@
-import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, SignIn, SignInButton } from "@clerk/clerk-react";
 import "./App.css";
 
 function App() {
   return (
     <div>
-      <SignedOut>
+      {/* <SignedOut>
         <SignInButton />
         <p>This content is public. Only signed out users can see this.</p>
       </SignedOut>
-      <SignedIn>
+      <SignedIn >
         <p>This content is private. Only signed in users can see this.</p>
-      </SignedIn>
+      </SignedIn> */}
+      <SignIn />
     </div>
   );
 }
